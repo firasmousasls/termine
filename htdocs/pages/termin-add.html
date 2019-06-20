@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+
+<html lang="de">
+<head>
+    <META HTTP-EQUIV="content-type" CONTENT="text/html; charset=utf-8">
+    <title>Terminverwaltung mit C</title>
+   <title>Terminverwaltung mit C</title>
+    <link rel="icon" href="../favicon.ico">
+        <link rel="stylesheet" type="text/css" href="../style.css">
+    <link href="https://fonts.googleapis.com/css?family=IBM+Plex+Mono:400,700" rel="stylesheet">
+    <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.4.0.min.js"></script>
+</head>
+<body>
+
+<nav class="navigation">
+    <ul class="nav-ul">
+        <li class="nav-ul-li"><a href="../pages/login.html">Login</a></li>
+        <li class="nav-ul-li"><a href="../pages/menue.html">Menue</a></li>
+        <li class="nav-ul-li"><a href="../pages/neuer-termin.html">Neuer Termin</a></li>
+        <li class="nav-ul-li"><a href="../pages/termin-aendern.html">Termin Bearbeiten</a></li>
+    </ul>
+    <ul class="nav-ul-id" id="scope">
+        <li class="nav-ul-li-id image">
+            <img class="admin-image" src="../assets/admin.svg" height="40px">
+            <span class="admin-logged-info post_meta">Master</span>
+        </li>
+    </ul>
+</nav>
+
+<section class="main">
+    <div class="container-termin" id="aenderung">
+        <h1 class="title">Terminverwaltung - Neuer Termin </h1>
+        <div class="wrapper">
+            <div class="calender">
+
+            </div>
+
+            <div class="timetable">
+                <div class="time">
+                    <form class="editing" action="http://localhost/cgi-bin/add termin_neu.exe" METHOD="POST">
+                        <div class="time-wrapper">
+                            <p class="geburtstag">
+                                <label class="lefty">Birthday:</label>
+                                <input type="date" name="bday" class="bday righty">
+                            </p>
+                            <p class="uhrzeit">
+                                <label class="lefty">Uhrzeit:</label>
+                                <input type="time" name="zeit" class="zeit righty">
+                            </p>
+                            <p class="type-label">
+                                <label class="lefty">Art:</label>
+                                <textarea rows="6" cols="20" name="aufgabe" class="aufgabe righty"></textarea>
+                            </p>
+   				 <div class="close-wrapper">
+              			  <input class="send-button" type="submit">
+            			</div>
+                        </div>
+                    </form>
+                </div>
+                <div class="detail"></div>
+            </div>
+
+        
+        </div>
+    </div>
+</section>
+
+<footer class="footer">
+    <p class="footer-text">
+        Juni-2019@copyrightmaschineistkaputt
+        < <strong class="editors">Firas</strong> >
+        < <strong class="editors">Mischu</strong> >
+        < <strong class="editors">Lamine</strong> >
+    </p>
+</footer>
+</body>
+</html>

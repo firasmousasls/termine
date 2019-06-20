@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+
+<html lang="de">
+<head>
+    <META HTTP-EQUIV="content-type" CONTENT="text/html; charset=utf-8">
+    <title>Terminverwaltung mit C</title>
+    <link rel="icon" href="../favicon.ico">
+    <link rel="stylesheet" type="text/css" href="../style.css">
+    <link href="https://fonts.googleapis.com/css?family=IBM+Plex+Mono:400,700" rel="stylesheet">
+</head>
+<body>
+<nav class="navigation terakutta">
+    <ul class="nav-ul">
+        <li class="nav-ul-li"><a href="../pages/login.html">Login</a></li>
+        <li class="nav-ul-li"><a href="../pages/menue.html">Menue</a></li>
+        <li class="nav-ul-li"><a href="../pages/neuer-termin.html">Neuer Termin</a></li>
+        <li class="nav-ul-li"><a href="../pages/termin-aendern.html">Termin Bearbeiten</a></li>
+    </ul>
+</nav>
+
+<section class="main">
+    <div class="limiter">
+        <div class="container-login100">
+            <div class="wrap-login100 p-b-160 p-t-50">
+                <form name="login-form" class="login100-form validate-form" action="http://localhost/cgi-bin/login_neu.exe" METHOD="POST">
+					<span class="login100-form-title p-b-43">
+						Melden Sie bitte hier
+					</span>
+
+                    <div class="wrap-input100 rs1 validate-input" data-validate="Username is required">
+                        <input class="input100 input-left" type="text" name="username" size="25" maxlength="20">
+                        <span class="label-input100">Username</span>
+                    </div>
+
+
+                    <div class="wrap-input100 rs2 validate-input" data-validate="Password is required">
+                        <input class="input100 input-right" type="password" name="password" size="25" maxlength="20">
+                        <span class="label-input100">Password</span>
+                    </div>
+
+                    <div class="container-login100-form-btn">
+                        <button class="login100-form-btn" title="Einloggen" name="SUBMIT" type="submit" value="submit">
+                            Einloggen
+                        </button>
+                    </div>
+
+                    <div class="text-center w-full p-t-23">
+                        <a href="../pages/reset-password.html" class="txt1">
+                            * Kennwort Vergessen?
+                        </a>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>
+</body>
+</html>

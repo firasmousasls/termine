@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+
+
+<html lang="de">
+
+<head>
+  
+  <META HTTP-EQUIV="content-type" CONTENT="text/html; charset=utf-8">
+  
+  <title>Terminverwaltung mit C</title>
+   
+ <link rel="icon" href="../favicon.ico">
+  
+  <link rel="stylesheet" type="text/css" href="../htdocs/style.css">
+
+    <link href="https://fonts.googleapis.com/css?family=IBM+Plex+Mono:400,700" rel="stylesheet">
+
+</head>
+
+<body>
+
+<nav class="navigation terakutta">
+ 
+   <ul class="nav-ul">
+   
+     <li class="nav-ul-li">
+<a href="../pages/login.html">Login</a></li>
+ 
+      
+ <li class="nav-ul-li"><a href="../pages/menue.html">Menue</a></li>
+
+        <li class="nav-ul-li"><a href="../pages/neuer-termin.html">Neuer Termin</a></li>
+
+        <li class="nav-ul-li"><a href="../pages/termin-aendern.html">Termin Bearbeiten</a></li>
+ 
+   </ul>
+
+</nav>
+
+
+<section class="main">
+  
+  <style type="text/css">
+
+        .tg {margin: 0 auto; width: 100%;
+ max-width: 850px;
+ border-collapse: collapse;
+ border-spacing: 0;
+border-color: #9ABAD9;
+
+ -webkit-box-shadow: 0px 15px 28px -7px rgba(96, 33, 211, 0.5);
+ box-shadow: 0px 15px 28px -7px rgba(96, 33, 211, 0.5);}
+
+
+        .tg td {font-family: Arial, sans-serif; font-size: 14px;
+ padding: 10px 20px;
+ border-style: solid;
+ border-width: 0px;
+ overflow: hidden;
+ word-break: normal;
+ border-top-width: 1px;
+ border-color: #9ABAD9;
+ color: #444;
+ background-color: #EBF5FF;}
+
+
+        .tg th {font-family: Arial, sans-serif;
+ font-size: 14px;
+ font-weight: normal;
+ padding: 20px 20px;
+ border-width: 0px;
+ overflow: hidden;
+  word-break: normal;
+ border-top-width: 1px;
+ border-bottom-width: 1px;
+ border-color: #9ABAD9;
+ color: #fff;
+ background-color: #409cff;}
+
+
+        .tg .tg-jfpe {background: #a0c3f3;
+ font-size: 16px;
+ color: #ffffff;
+ border-color: inherit;
+ text-align: center;
+ vertical-align: middle;
+ }
+
+
+        .tg .tg-29iv {
+font-size: 16px; color: #ffffff;
+ font-weight: bold;
+ border-color: inherit;
+ text-align: left}
+
+
+        .bearbeiten {text-align: center !important;}
+
+
+        .tg .tg-xi6a {background-color: #e3eaf5;
+ font-size: 16px;
+ color: #ffffff;
+ border-color: inherit;
+ text-align: center;
+ vertical-align: middle;}
+
+
+        .tg .tg-jjow {background: #a0c3f3;
+ font-size: 16px;
+ color: black;
+ border-color: inherit;
+ text-align: left;
+ vertical-align: middle;}
+
+
+        .tg .tg-fr00 {background-color: #e3eaf5;
+ font-size: 16px;
+ color: black;
+ border-color: inherit;
+ text-align: left;
+ vertical-align: middle;}
+ 
+   </style>
+
+
+
+    <div class="container-termin-liste" id="main">
+
+        <h1 class="title">Terminverwaltung - Neuer Termin</h1>
+       
+ <table class="tg">
+
+
+            <tr>
+   
+             <th class="tg-29iv">Datum</th>
+
+                <th class="tg-29iv">Art</th>
+
+                <th class="bearbeiten tg-29iv">Bearbeiten</th>
+
+            </tr>
+  
+          <tr>
+ 
+               <td class="tg-fr00">19.05.2019 14.00 Uhr</td>
+
+                <td class="tg-fr00">Meeting C++-Team</td>
+
+                <td class="tg-xi6a right">
+  
+                  <a class="list-edit" href="#"><img class="edit-button" src="../assets/edit_icon.svg"></a>
+
+                   
+<a class="list-delete" href="#"><img class="delete-button" src="../assets/delete_icon.svg">
+ </a>
+    
+            </td>
+       
+     </tr>
+   
+         <tr>
+      
+          <td class="tg-jjow">26.06.2019 12.30 Uhr</td>
+   
+             <td class="tg-jjow">Mittagessen mit Kunde M.</td>
+       
+         <td class="tg-jfpe right">
+        
+            <a class="list-edit" href="#">
+         
+               <img class="edit-button" src="../assets/edit_icon.svg">
+   
+                 </a>
+           
+         <a class="list-delete" href="#">
+       
+                 <img class="delete-button" src="../assets/delete_icon.svg">
+                    </a>
+     
+           </td>
+           
+ </tr>
+  
+          <tr>
+         
+       <td class="tg-fr00">05.07.2019 11.00 Uhr</td>
+   
+             <td class="tg-fr00">Uebergabe Projekt X</td>
+         
+       <td class="tg-xi6a right">
+          
+          <a class="list-edit" href="#">
+            
+            <img class="edit-button" src="../assets/edit_icon.svg">
+   
+                 </a>
+                  
+  <a class="list-delete" href="#">
+                     
+   <img class="delete-button" src="../assets/delete_icon.svg">
+                    </a>
+           
+     </td>
+
+            </tr>
+
+        </table>
+
+    </div>
+
+</section>
+
+
+
+<footer class="footer">
+
+    <p>
+        Juni-2019@copyrightmaschineistkaputt
+        < <strong class="editors">Firas</strong> >
+        < <strong class="editors">Mischu</strong> >
+        < <strong class="editors">Lamine</strong> >
+    </p>
+
+</footer>
+
+</body>
+
+</html>

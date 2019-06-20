@@ -1,0 +1,4 @@
+﻿  Source.cpp
+D:\termin verwaltung\add termin_neu\add termin_neu\Source.cpp(85,9): warning C4476:  'printf' : unknown type field character ''' in format specifier
+D:\termin verwaltung\add termin_neu\add termin_neu\Source.cpp(85,9): warning C4476: D:\termin verwaltung\add termin_neu\add termin_neu\Source.cpp(46) : warning C4715: 'neuerTermin': not all control paths return a value
+  add termin_neu.vcxproj -> D:\termin verwaltung\add termin_neu\Debug\add termin_neu.exe
