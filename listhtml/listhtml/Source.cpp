@@ -11,6 +11,9 @@ int main()
 	FILE* f = fopen("C:\\temp\\Termine.txt", "a+");
 	char buffer[250] = "";
 	char line[250] = "";
+	int IDEdit = 0;
+	int IDDelete = 0;
+
 
 	char* Tocken;
 
@@ -38,43 +41,46 @@ int main()
 	printf("<li class ='nav-ul-li'><a href = 'http://localhost/pages/termin-edit.html'>Termin Bearbeiten</a></li>");
 	printf("</ul>");
 	printf("</nav>");
-	printf("<h1 class = 'title' align='center'>Terminverwaltung - Termin List </h1>");
+	printf("<h1 class = 'title' align='center'>Terminverwaltung - Termine List </h1>");
 	printf("<section class = main'>");
 	printf("<div class ='container-termin-liste' id = 'main'>");
-	printf("<table border='3' align='center' class='tg'>");
+	printf("<form action='http://localhost/cgi-bin/edit-termin.exe' METHOD='POST'>");
+	printf("<table border='3' align='center' name='termine' class='tg'>");
 	printf("<tr>");
-	printf("<th class='tg-29iv' width='90px'> Datum </th>");
-	printf("<th class='tg-29iv'> Art </th>");
-	printf("<th class='bearbeiten tg-29iv' width='370px'> Bearbeiten </th>");
+	printf("<th class='tg-29iv' name='Datum' width='90px'> Datum </th>");
+	printf("<th class='tg-29iv' name='Art'> Art </th>");
+	printf("<th class='bearbeiten tg-29iv' name='Bearbeiten' width='370px'> Bearbeiten </th>");
 	printf("</tr>");
-	printf("<form name='login-form' class='login100-form validate-form' METHOD='POST'>");
 	while (fgets(buffer, sizeof(buffer), f) != NULL)
 	{
+
 		strcpy(line, buffer);
 		cout << endl;
-		printf("<tr>");
+		printf("<tr name='test'>");
 
 		Tocken = strtok(line, "|");
-		printf("<td class='tg-fr00'> %s ", Tocken);
+		printf("<td class='tg-fr00' name='datetime'> %s ", Tocken);
 
 		Tocken = strtok(NULL, "|");
 		printf(" %s </td>", Tocken);
 
 		Tocken = strtok(NULL, "|");
 
-		printf("<td class='tg-fr00'>   %s </td>", Tocken);
+		printf("<td class='tg-fr00' name ='art'>   %s </td>", Tocken);
 		printf("<td class='list-edit'>");
 
 		/*printf("<a href='#'><img src='../assets/edit_icon.svg'></a>");
 		printf("<a href='#'><img src='../assets/delete_icon.svg'></a>");*/
 
-		printf("<button title='bearbeiten' name='SUBMIT' formaction='file:///C:/temp/Apache/htdocs/pages/termin-aendern.html' style='height:25px; width:180px' type='submit' value='submit'>bearbeiten</button>");
-		printf("<button title='entfernen' name='SUBMIT2' formaction='' style='height:25px; width:180px' type='submit' value='submit'>entfernen</button>");
+		printf("<button title='bearbeiten' style='height:30px; width:180px' name='edit' type='submit' value='%d'>bearbeiten</button>",IDEdit);
+		printf("<button title='entfernen' style='height:30px; width:180px;margin:12px' name='delete' value='%d' type='submit'>entfernen</button>",IDDelete);
 		printf("</td>");
 		printf("</tr>");
+		IDEdit++;
+		IDDelete++;
 	}
-	printf("</form>");
 	printf("</table>");
+	printf("</form>");
 	printf("</div>");
 	printf("</section");
 	printf("</body>");
