@@ -9,7 +9,46 @@ char art[100];
 char datum[10];
 char Uhrzeit[7];
 
+
 int neuerTermin()
+{
+	FILE* f = fopen("C:\\temp\\Termine.txt", "a+");
+
+	int pos = 0;
+	char TerminLine[150] = "";
+
+	if (f == NULL)
+	{
+		cout << "<p> Fehler beim einlesen der Datei </p>";
+		return 0;
+	}
+
+	/*cout << "Geben sie das Datum an:";
+	cin.getline(datum, 10);
+
+	cout << "Geben Sie die Uhr Zeit an:";
+	cin.getline(Uhrzeit, 10);
+
+	cout << "Geben Sie den art an:";
+	cin.getline(art, 100);*/
+
+	strcat(TerminLine, datum);
+	strcat(TerminLine, "|");
+	strcat(TerminLine, Uhrzeit);
+	strcat(TerminLine, "|");
+	strcat(TerminLine, art);
+	strcat(TerminLine, "\n");
+
+	fseek(f, 0, SEEK_CUR);
+
+	fputs(TerminLine, f);
+
+	fclose(f);
+}
+
+/*---------------------------------------------------------------*/
+
+int terminlist()
 {
 	FILE* f = fopen("C:\\temp\\Termine.txt", "a+");
 	char buffer[250] = "";
@@ -85,9 +124,7 @@ int neuerTermin()
 	return 0;
 }
 
-
-
-/*--------------------------------------------------------------------*/
+/*---------------------------------------------------------------*/
 
 int main()
 {

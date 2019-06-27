@@ -1,13 +1,23 @@
 #include<iostream>
 #include<stdio.h>
 #pragma warning(disable:4996)
-
 using namespace std;
 
-int main()
-{
-	cout << "Content-Type: text/html\r\n\r\n";
+char altDatum[10 + 1];
+char altUhrzeit[5 + 1];
+char altart[1500 + 1];
 
+
+char neuDatum[10 + 1];
+char neuUhrzeit[5 + 1];
+char neuart[1500 + 1];
+
+char option[10 + 1]= "";
+char ID[10 + 1] = "";
+int rowID = 0;
+
+int listter()
+{
 	FILE* f = fopen("C:\\temp\\Termine.txt", "a+");
 	char buffer[250] = "";
 	char line[250] = "";
@@ -83,5 +93,89 @@ int main()
 	printf("</section");
 	printf("</body>");
 	printf("</html>");
+
+}
+
+
+
+
+int main()
+{
+	cout << "Content-Type: text/html\r\n\r\n";
+	char Data[1000];
+	char* Token;
+	char buffer[1000] = "";
+	int counter = 0;
+	char line[100];
+
+	cin >> Data;
+
+	if (Data != NULL)
+	{
+		//printf("%s", Data);
+		Token = strtok(Data, "=");
+		strcpy(option, Token);
+
+		Token = strtok(NULL, "=");
+		strcpy(ID, Token);
+		rowID = atof(ID);
+		//printf("ID:%i		option:%s", rowID, option);
+
+		FILE* f = fopen("C:\\temp\\Termine.txt", "r");
+		FILE* ftemp = fopen("C:\\temp\\Termine1.txt", "w");
+
+		if (f == NULL)
+		{
+			cout << "Fehler beim Einlesen der Datei!";
+			return 0;
+		}
+		if (strcmp(option,"delete") == 0)
+		{
+
+			while (fgets(buffer, sizeof(buffer), f) != NULL)
+			{
+				strcpy(line, buffer);
+
+				if (counter == rowID)
+				{
+					strcpy(buffer, "\0");
+				}
+
+				fputs(buffer, ftemp);
+				counter++;
+			}
+	
+			fclose(f);
+			fclose(ftemp);
+			remove("C:\\temp\\Termine.txt");
+			rename("C:\\temp\\Termine1.txt", "C:\\temp\\Termine.txt");
+
+			listter();
+		}
+	}
+	else
+		printf("<p> Connection problem!! </p>");
+
+
+	//printf("<p> DATA ist : %s </p>", Data);
+
+	/*FILE* f = fopen("C:\\temp\\Termine.txt","r");
+
+	if (f == NULL)
+	{
+		cout << "Die Datei ksnn nicht gefönnet wrden!";
+		return 0;
+	}
+
+	char editline[200];
+	char buffer[4000]="";
+
+	fread(buffer, sizeof(editline), 20, f);
+
+
+
+
+	fclose(f);
+	system("pause");*/
 	return 0;
 }

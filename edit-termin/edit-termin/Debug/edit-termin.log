@@ -1,0 +1,4 @@
+﻿  Source.cpp
+D:\termin verwaltung\edit-termin\edit-termin\Source.cpp(121,15): warning C4244:  '=': conversion from 'double' to 'int', possible loss of data
+D:\termin verwaltung\edit-termin\edit-termin\Source.cpp(121,15): warning C4244: D:\termin verwaltung\edit-termin\edit-termin\Source.cpp(97) : warning C4715: 'listter': not all control paths return a value
+  edit-termin.vcxproj -> D:\termin verwaltung\edit-termin\Debug\edit-termin.exe
