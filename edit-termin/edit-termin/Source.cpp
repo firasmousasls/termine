@@ -112,7 +112,8 @@ int main()
 
 	if (Data != NULL)
 	{
-		//printf("%s", Data);
+		cout << Data;
+		printf("%s", Data);
 		Token = strtok(Data, "=");
 		strcpy(option, Token);
 
@@ -129,7 +130,7 @@ int main()
 			cout << "Fehler beim Einlesen der Datei!";
 			return 0;
 		}
-		if (strcmp(option,"delete") == 0)
+		if (strcmp(option, "delete") == 0)
 		{
 
 			while (fgets(buffer, sizeof(buffer), f) != NULL)
@@ -144,7 +145,7 @@ int main()
 				fputs(buffer, ftemp);
 				counter++;
 			}
-	
+
 			fclose(f);
 			fclose(ftemp);
 			remove("C:\\temp\\Termine.txt");
@@ -152,30 +153,37 @@ int main()
 
 			listter();
 		}
+		else if (strcmp(option, "edit") == 0)
+		{
+			FILE* f = fopen("C:\\temp\\Termine.txt", "r");
+
+			if (f == NULL)
+			{
+				cout << "Fehler beim Einlesen der Datei!";
+				return 0;
+			}
+
+			while (fgets(buffer, sizeof(buffer), f) != NULL)
+			{
+				if (counter == rowID)
+				{
+					Token = strtok(buffer, "|");
+					strcpy(altDatum, Token);
+
+					Token = strtok(NULL, "|");
+					strcpy(altUhrzeit, Token);
+
+					Token = strtok(NULL, "|");
+					strcpy(altart, Token);
+				}
+				counter++;
+			}
+
+			fclose(f);
+		}
 	}
 	else
 		printf("<p> Connection problem!! </p>");
 
-
-	//printf("<p> DATA ist : %s </p>", Data);
-
-	/*FILE* f = fopen("C:\\temp\\Termine.txt","r");
-
-	if (f == NULL)
-	{
-		cout << "Die Datei ksnn nicht gefönnet wrden!";
-		return 0;
-	}
-
-	char editline[200];
-	char buffer[4000]="";
-
-	fread(buffer, sizeof(editline), 20, f);
-
-
-
-
-	fclose(f);
-	system("pause");*/
 	return 0;
 }
